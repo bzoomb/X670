@@ -6,7 +6,6 @@ service mobicore /system/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry 
 	-r /vendor/app/mcRegistry/05120000000000000000000000000001.drbin \
 	-r /vendor/app/mcRegistry/06090000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/07050000000000000000000000003545.drbin \
-	-r /vendor/app/mcRegistry/07150000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/07170000000000000000000000000000.drbin 
 
     user root
