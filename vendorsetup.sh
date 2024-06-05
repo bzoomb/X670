@@ -38,21 +38,21 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     # Version / Maintainer infos.
 	export FOX_VERSION="R11.1"
-	export FOX_BUILD_TYPE="Unofficial-Stable"
+	export FOX_BUILD_TYPE="Unofficial-Beta"
 
     # Device Information.
 	export FOX_ARCH=arm64
 	export FOX_AB_DEVICE=1=1
 	export FOX_VIRTUAL_AB_DEVICE=1
 	export FOX_VARIANT="A12_FBEv2"
-	export TARGET_DEVICE_ALT="X670,INFINIX-X670" # I am not what are the over possible names.
+	export TARGET_DEVICE_ALT="X670,INFINIX-X670" # I am not sure what are the over possible names.
 
     # Partition handling.
 	export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
 
 	# OTA / DM-Verity / Encryption
     # Disabled the OTA settings by default.
-	#export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
+	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 	# Prevent patching DM-verity & Forced-Encryption.
 	export OF_DONT_PATCH_ON_FRESH_INSTALLATION=1
@@ -90,18 +90,18 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# Sed Support.
 	export FOX_USE_SED_BINARY=0
 	# Bash Support
-	export FOX_USE_BASH_SHELL=1
-	export FOX_ASH_IS_BASH=1
+	#export FOX_USE_BASH_SHELL=1
+	#export FOX_ASH_IS_BASH=1
 	# GRep Command.
-	export FOX_USE_GREP_BINARY=0
+	#export FOX_USE_GREP_BINARY=0
 	# Supports lzma and xz.
 	export FOX_USE_XZ_UTILS=0
 	# Uses Nano editor.
-	export FOX_USE_NANO_EDITOR=1
+	#export FOX_USE_NANO_EDITOR=1
 	# Added phhusson's LPTool.
 	export OF_ENABLE_LPTOOLS=1
     # Quick backup list.
-    export OF_QUICK_BACKUP_LIST="/boot;/data;"
+    export OF_QUICK_BACKUP_LIST="/boot;/nvram;/nvdata"
     # Build Date and Time Override.
 	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800" # Tue Jan 1 2019 00:00:00 GMT
 	# Delete AromaFM.
@@ -126,7 +126,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # Attempts to reduce the size of the recovery image.
     export FOX_DRASTIC_SIZE_REDUCTION=1
 	# Disable some operations relating only to Samsung devices.
-	#export OF_NO_SAMSUNG_SPECIAL=1
+	export OF_NO_SAMSUNG_SPECIAL=1
     # Not reset OrangeFox settings to defaults.
     export FOX_RESET_SETTINGS=1
 	# For removing the aapt binary from the build for reducing the size of the recovery.
@@ -140,9 +140,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # SAR detection.
 	export OF_USE_TWRP_SAR_DETECT=1
     # Enable the flashlight feature.
-	export OF_FLASHLIGHT_ENABLE=0
+	export OF_FLASHLIGHT_ENABLE=1
 	# Set custom flashlight path.
-	#export OF_FL_PATH1="/sys/devices/virtual/torch/torch/torch_level"
+	export OF_FL_PATH1="/sys/devices/virtual/torch/torch/torch_level"
     # MIUI OTA, and dm-verity/forced-encryption patching will be disabled
 	export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
 
