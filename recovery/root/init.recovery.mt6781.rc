@@ -36,7 +36,7 @@ on property:ro.crypto.state=unsupported
     stop mobicore
     stop keymaster-4-1
     stop gatekeeper-1-0
-
+    
 on property:ro.crypto.state=unencrypted
     stop mobicore
     stop keymaster-4-1
