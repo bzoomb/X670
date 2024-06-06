@@ -34,11 +34,11 @@
 /tranfs                   ext4      /dev/block/by-name/tranfs                        flags=display=tranfs
 
 # Removable storage
-/external_sd              auto      /dev/block/mmcblk0p1   /dev/block/mmcblk0        flags=display="Micro SD";storage;wipeingui;removable
-/usb-otg                  auto      /dev/block/sdd1   /dev/block/sdd                 flags=display="USB OTG";storage;wipeingui;removable
+/external_sd              auto      /dev/block/mmcblk0p1    /dev/block/mmcblk0       flags=display="Micro SD";storage;wipeingui;removable
+/usb_otg                  auto      /dev/block/sdd1         /dev/block/sdd           flags=display="USB OTG";storage;wipeingui;removable
 
 # Flashable logical partitions
 /system_image             emmc      /dev/block/mapper/system                         flags=slotselect;backup=1;display="System Image";flashimg=1;wipeingui
-/system_ext_image         emmc      /dev/block/mapper/system_ext                     flags=slotselect;backup=1;display="System_ext Image";flashimg=1;wipeingui
+/system_ext_image         emmc      /dev/block/mapper/system_ext                     flags=slotselect;backup=1;display="System_EXT Image";flashimg=1;wipeingui
 /product_image            emmc      /dev/block/mapper/product                        flags=slotselect;backup=1;display="Product Image";flashimg=1;wipeingui
 /vendor_image             emmc      /dev/block/mapper/vendor                         flags=slotselect;backup=1;display="Vendor Image";flashimg=1;wipeingui
